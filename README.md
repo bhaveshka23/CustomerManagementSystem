@@ -50,5 +50,5 @@ project/
 5️⃣ Run the server
 ```python manage.py runserver```
 
-✨ **Author**
+✨ 
 Created by **Bhavesh Kale**
