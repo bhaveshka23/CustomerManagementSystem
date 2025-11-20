@@ -51,4 +51,4 @@ project/
 ```python manage.py runserver```
 
 ✨ **Author**
-Created by ##Bhavesh Kale
+Created by **Bhavesh Kale**
