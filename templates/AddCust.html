@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management System</title>
+
+    <style>
+        *{
+            font-family: Arial, sans-serif;
+        }
+
+        /* Error popup box */
+        .error-box {
+            max-width: 600px;
+            margin: 10px auto;
+            padding: 15px;
+            background: #ffdddd;
+            color: #b30000;
+            border-left: 5px solid red;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        form label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form .submit-btn {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        form .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+
+<h2 style="text-align:center; margin-bottom:20px;">Add New Employee</h2>
+
+
+{% if error %}
+<div class="error-box">
+    <strong>Error:</strong>
+    <ul>
+        <li>{{ error }}</li>   
+    </ul>
+</div>
+{% endif %}
+
+<form action="" method="POST" enctype="multipart/form-data" 
+      style="max-width:600px; margin:auto; padding:20px; 
+             border:1px solid #ddd; border-radius:8px;">
+
+    {% csrf_token %}
+
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name">
+
+    <label for="contact">Contact:</label>
+    <input type="text" name="contact" id="contact" required>
+
+    <label for="gender">Gender:</label>
+    <select name="gender" id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" name="dob" id="dob"required>
+
+    <label for="address">Address:</label>
+    <textarea name="address" id="address" rows="3" required></textarea>
+
+    <label for="department">Department:</label>
+    <input type="text" name="department" id="department" required>
+
+    <label for="image">Upload Image:</label>
+    <input type="file" name="image" id="image">
+
+    <button type="submit" class="submit-btn">Add Employee</button>
+</form>
+
+</body>
+</html>
