@@ -19,16 +19,6 @@ Frontend: HTML, CSS
 Database: SQLite (default)
 Media Handling: Django Media Files
 
-📂 Project Structure
-project/
-│── cms/                    
-│── customerapp/            
-│── templates/              
-│── media/                 
-│── static/                 
-│── db.sqlite3             
-│── manage.py
-└── README.md
 
 ⚙️ Setup Instructions
 1️⃣ Clone the project
